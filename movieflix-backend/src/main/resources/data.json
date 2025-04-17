@@ -1,0 +1,92 @@
+[
+  {
+    "movieId": 1,
+    "title": "Inception",
+    "director": "Christopher Nolan",
+    "studio": "Warner Bros.",
+    "movieCast": ["Leonardo DiCaprio", "Joseph Gordon-Levitt", "Ellen Page"],
+    "releaseYear": 2010,
+    "poster": "inception-poster.jpg"
+  },
+  {
+    "movieId": 2,
+    "title": "Interstellar",
+    "director": "Christopher Nolan",
+    "studio": "Paramount Pictures",
+    "movieCast": ["Matthew McConaughey", "Anne Hathaway", "Jessica Chastain"],
+    "releaseYear": 2014,
+    "poster": "interstellar-poster.jpg"
+  },
+  {
+    "movieId": 3,
+    "title": "The Matrix",
+    "director": "Lana Wachowski",
+    "studio": "Warner Bros.",
+    "movieCast": ["Keanu Reeves", "Laurence Fishburne", "Carrie-Anne Moss"],
+    "releaseYear": 1999,
+    "poster": "matrix-poster.jpg"
+  },
+  {
+    "movieId": 4,
+    "title": "Avatar",
+    "director": "James Cameron",
+    "studio": "20th Century Fox",
+    "movieCast": ["Sam Worthington", "Zoe Saldana", "Sigourney Weaver"],
+    "releaseYear": 2009,
+    "poster": "avatar-poster.jpg"
+  },
+  {
+    "movieId": 5,
+    "title": "The Godfather",
+    "director": "Francis Ford Coppola",
+    "studio": "Paramount Pictures",
+    "movieCast": ["Marlon Brando", "Al Pacino", "James Caan"],
+    "releaseYear": 1972,
+    "poster": "godfather-poster.jpg"
+  },
+  {
+    "movieId": 6,
+    "title": "Pulp Fiction",
+    "director": "Quentin Tarantino",
+    "studio": "Miramax Films",
+    "movieCast": ["John Travolta", "Samuel L. Jackson", "Uma Thurman"],
+    "releaseYear": 1994,
+    "poster": "pulp-fiction-poster.jpg"
+  },
+  {
+    "movieId": 7,
+    "title": "The Dark Knight",
+    "director": "Christopher Nolan",
+    "studio": "Warner Bros.",
+    "movieCast": ["Christian Bale", "Heath Ledger", "Aaron Eckhart"],
+    "releaseYear": 2008,
+    "poster": "dark-knight-poster.jpg"
+  },
+  {
+    "movieId": 8,
+    "title": "Fight Club",
+    "director": "David Fincher",
+    "studio": "20th Century Fox",
+    "movieCast": ["Brad Pitt", "Edward Norton", "Helena Bonham Carter"],
+    "releaseYear": 1999,
+    "poster": "fight-club-poster.jpg"
+  },
+  {
+    "movieId": 9,
+    "title": "Forrest Gump",
+    "director": "Robert Zemeckis",
+    "studio": "Paramount Pictures",
+    "movieCast": ["Tom Hanks", "Robin Wright", "Gary Sinise"],
+    "releaseYear": 1994,
+    "poster": "forrest-gump-poster.jpg"
+  },
+  {
+    "movieId": 10,
+    "title": "Gladiator",
+    "director": "Ridley Scott",
+    "studio": "DreamWorks Pictures",
+    "movieCast": ["Russell Crowe", "Joaquin Phoenix", "Connie Nielsen"],
+    "releaseYear": 2000,
+    "poster": "gladiator-poster.jpg"
+  }
+]
