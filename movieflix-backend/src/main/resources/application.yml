@@ -2,9 +2,10 @@ spring:
   application:
     name: movieflix-backend
   datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: toor
-    url: jdbc:mysql://localhost:3306/movieflix
+    url: jdbc:mysql://localhost:3306/movieflix?useSSL=false&serverTimezone=UTC
   jpa:
     hibernate:
       ddl-auto: update
@@ -15,6 +16,16 @@ spring:
 
 project:
   poster: posters/
+
+security:
+  jwt:
+    access-token:
+      expiration-minutes: 5
+
+    refresh-token:
+      expiration-days: 7
+
+  secret-key: ChkdEVQYNkI1kAldPLKg9bHdvAo8BP+QZ38rRsaDF5c
 
 base:
   url: "http://localhost:8080"

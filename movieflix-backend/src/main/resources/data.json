@@ -1,6 +1,5 @@
 [
   {
-    "movieId": 1,
     "title": "Inception",
     "director": "Christopher Nolan",
     "studio": "Warner Bros.",
@@ -9,7 +8,6 @@
     "poster": "inception-poster.jpg"
   },
   {
-    "movieId": 2,
     "title": "Interstellar",
     "director": "Christopher Nolan",
     "studio": "Paramount Pictures",
@@ -18,7 +16,6 @@
     "poster": "interstellar-poster.jpg"
   },
   {
-    "movieId": 3,
     "title": "The Matrix",
     "director": "Lana Wachowski",
     "studio": "Warner Bros.",
@@ -27,7 +24,6 @@
     "poster": "matrix-poster.jpg"
   },
   {
-    "movieId": 4,
     "title": "Avatar",
     "director": "James Cameron",
     "studio": "20th Century Fox",
@@ -36,7 +32,6 @@
     "poster": "avatar-poster.jpg"
   },
   {
-    "movieId": 5,
     "title": "The Godfather",
     "director": "Francis Ford Coppola",
     "studio": "Paramount Pictures",
@@ -45,7 +40,6 @@
     "poster": "godfather-poster.jpg"
   },
   {
-    "movieId": 6,
     "title": "Pulp Fiction",
     "director": "Quentin Tarantino",
     "studio": "Miramax Films",
