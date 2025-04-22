@@ -32,4 +32,9 @@ public class GlobalExceptionHandler {
         public ProblemDetail handleTokenExpirationExceptionException(TokenExpirationException ex) {
             return ProblemDetail.forStatusAndDetail(HttpStatus.UNAUTHORIZED, ex.getMessage());
         }
+
+    @ExceptionHandler(InvalidResourceException.class)
+    public ProblemDetail handleInvalidResourceException(InvalidResourceException ex) {
+        return ProblemDetail.forStatusAndDetail(HttpStatus.UNAUTHORIZED, ex.getMessage());
+    }
 }

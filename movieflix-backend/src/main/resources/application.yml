@@ -13,6 +13,22 @@ spring:
     properties:
       hibernate:
         format_sql: true
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: "carlogbossou.developpeur@gmail.com"
+    password: ""
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
 
 project:
   poster: posters/
@@ -21,11 +37,13 @@ security:
   jwt:
     access-token:
       expiration-minutes: 5
-
     refresh-token:
       expiration-days: 7
-
   secret-key: ChkdEVQYNkI1kAldPLKg9bHdvAo8BP+QZ38rRsaDF5c
+
+  app:
+    forgot-password:
+      otp-expiration-seconds: 70
 
 base:
   url: "http://localhost:8080"

@@ -1,5 +1,6 @@
 package com.follysitou.movieflix_backend.auth.services;
 
+import com.follysitou.movieflix_backend.exceptions.TokenExpirationException;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -45,8 +46,14 @@ public class AuthFilterService  extends OncePerRequestFilter {
         // extract JWT
         jwt = authHeader.substring(7);
 
-        // extract username from JWT
-        username = jwtService.extractUsername(jwt);
+        try {
+            // extract username from JWT
+            username = jwtService.extractUsername(jwt);
+
+        } catch(io.jsonwebtoken.JwtException ex) {
+
+            throw new TokenExpirationException("The token is expired");
+        }
 
         if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
             UserDetails userDetails = userDetailsService.loadUserByUsername(username);
