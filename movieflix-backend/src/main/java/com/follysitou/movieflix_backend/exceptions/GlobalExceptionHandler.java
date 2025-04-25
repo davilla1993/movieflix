@@ -33,8 +33,18 @@ public class GlobalExceptionHandler {
             return ProblemDetail.forStatusAndDetail(HttpStatus.UNAUTHORIZED, ex.getMessage());
         }
 
-    @ExceptionHandler(InvalidResourceException.class)
-    public ProblemDetail handleInvalidResourceException(InvalidResourceException ex) {
-        return ProblemDetail.forStatusAndDetail(HttpStatus.UNAUTHORIZED, ex.getMessage());
-    }
+        @ExceptionHandler(InvalidResourceException.class)
+        public ProblemDetail handleInvalidResourceException(InvalidResourceException ex) {
+            return ProblemDetail.forStatusAndDetail(HttpStatus.UNAUTHORIZED, ex.getMessage());
+        }
+
+        @ExceptionHandler(ResourceAlreadyExistsException.class)
+        public ProblemDetail handleResourceAlreadyExistsException(ResourceAlreadyExistsException ex) {
+            return ProblemDetail.forStatusAndDetail(HttpStatus.CONFLICT, ex.getMessage());
+        }
+
+        @ExceptionHandler(BadCredentialsException.class)
+        public ProblemDetail handleBadCredentialsException(BadCredentialsException ex) {
+            return ProblemDetail.forStatusAndDetail(HttpStatus.BAD_REQUEST, ex.getMessage());
+        }
 }

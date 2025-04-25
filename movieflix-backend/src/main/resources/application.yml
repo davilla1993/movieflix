@@ -21,7 +21,7 @@ spring:
     host: smtp.gmail.com
     port: 587
     username: "carlogbossou.developpeur@gmail.com"
-    password: ""
+    password: "zrzavcigfkfrvhjq"
     properties:
       mail:
         smtp:
@@ -43,7 +43,7 @@ security:
 
   app:
     forgot-password:
-      otp-expiration-seconds: 70
+      otp-expiration-seconds: 600
 
 base:
   url: "http://localhost:8080"

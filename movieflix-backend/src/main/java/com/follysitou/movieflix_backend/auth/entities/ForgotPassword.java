@@ -8,6 +8,7 @@ import java.util.Date;
 @Entity
 @Builder
 @Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class ForgotPassword {

@@ -4,10 +4,7 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.GrantedAuthority;
@@ -17,6 +14,7 @@ import java.util.List;
 
 @Entity
 @Getter
+@Setter
 @Builder
 @Table(name = "users")
 @NoArgsConstructor
@@ -43,7 +41,7 @@ public class User implements UserDetails {
     @Size(min = 5, message = "The password must have at least 5 characters")
     private String password;
 
-    @OneToOne(mappedBy = "user")
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
     private ForgotPassword forgotPassword;
 
     @OneToOne(mappedBy = "user")

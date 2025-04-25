@@ -1,6 +1,6 @@
 package com.follysitou.movieflix_backend.dto;
 
-public record ChangePassword(
+public record ResetPasswordRequest(
         String password,
         String repeatPassword
 ) {

@@ -6,15 +6,14 @@ import com.follysitou.movieflix_backend.auth.repositories.UserRepository;
 import com.follysitou.movieflix_backend.auth.utils.AuthResponse;
 import com.follysitou.movieflix_backend.auth.utils.LoginRequest;
 import com.follysitou.movieflix_backend.auth.utils.RegisterRequest;
+import com.follysitou.movieflix_backend.exceptions.ResourceAlreadyExistsException;
 import com.follysitou.movieflix_backend.exceptions.ResourceNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-
-import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -27,6 +26,13 @@ public class AuthService {
     private final AuthenticationManager authenticationManager;
 
     public AuthResponse register(RegisterRequest registerRequest) {
+
+        userRepository.findByUsername(registerRequest.getUsername())
+                .ifPresent(user -> {
+                    throw new ResourceAlreadyExistsException("Username already taken by another user !");
+                });
+
+
         var user = User.builder()
                 .name(registerRequest.getName())
                 .email(registerRequest.getEmail())
@@ -50,14 +56,19 @@ public class AuthService {
     public AuthResponse login(LoginRequest loginRequest) {
 
             var user = userRepository.findByEmail(loginRequest.getEmail())
-                    .orElseThrow(() -> new ResourceNotFoundException("User not found with these credentials"));
+                    .orElseThrow(() -> new ResourceNotFoundException("User not found with this email. Please, provide a correct email."));
 
-            authenticationManager.authenticate(
-                    new UsernamePasswordAuthenticationToken(
-                            loginRequest.getEmail(),
-                            loginRequest.getPassword()
-                    )
-            );
+            try {
+                authenticationManager.authenticate(
+                        new UsernamePasswordAuthenticationToken(
+                                loginRequest.getEmail(),
+                                loginRequest.getPassword()
+                        )
+                );
+
+            } catch (BadCredentialsException ex) {
+                    throw  new com.follysitou.movieflix_backend.exceptions.BadCredentialsException("Email and/or password incorrect.");
+            }
 
             var accessToken = jwtService.generateToken(user);
             var refreshToken = refreshTokenService.createRefreshToken(loginRequest.getEmail());
