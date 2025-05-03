@@ -1,11 +1,8 @@
 package com.follysitou.movieflix_backend.controllers;
 
-import com.follysitou.movieflix_backend.auth.entities.User;
-import com.follysitou.movieflix_backend.auth.repositories.UserRepository;
 import com.follysitou.movieflix_backend.auth.services.PasswordService;
 import com.follysitou.movieflix_backend.dto.ChangePasswordRequest;
 import com.follysitou.movieflix_backend.exceptions.BadCredentialsException;
-import com.follysitou.movieflix_backend.exceptions.ResourceNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

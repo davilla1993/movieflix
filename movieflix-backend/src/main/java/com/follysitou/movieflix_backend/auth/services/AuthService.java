@@ -50,6 +50,7 @@ public class AuthService {
                 .refreshToken(refreshToken.getRefreshToken())
                 .name(savedUser.getName())
                 .email(savedUser.getEmail())
+                .username(savedUser.getUsername())
                 .build();
     }
 
@@ -79,6 +80,7 @@ public class AuthService {
                     .refreshToken(refreshToken.getRefreshToken())
                     .name(user.getName())
                     .email(user.getEmail())
+                    .username(user.getUsername())
                     .build();
 
     }
